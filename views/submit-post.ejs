@@ -1,0 +1,115 @@
+<div class="submit-container">
+
+  <!-- Set the data attribute on a hidden element -->
+<div id="isSubmitted" data-is-submitted="<%= isSubmitted %>"></div>
+
+  <div class="px-4 my-5 text-center">
+    <h1 class="display-5 fw-bold write-post">Write a Post</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead">Share your smart eco thoughts with thousands of people <br> around the world.</p>
+    </div>
+  </div>
+
+  
+  <input type="hidden" id="" >
+
+  <div class="row justify-content-center">
+    <div class="row justify-content-center">
+
+
+    <!-- Display errors -->
+
+      <% if (validationErrors && validationErrors.length > 0) { %>
+        <div class="col-8 alert alert-danger" role="alert">
+          <ul>
+            <% validationErrors.forEach(function (errorMessage) { %>
+              <li><%= errorMessage %></li>
+            <% }) %>
+          </ul>
+        </div>
+      <% } %>
+
+      <div class="col-md-8 col-12">
+
+
+   <!--Submit POST form-->
+        <form action="/submit-post" method="POST" enctype="multipart/form-data" novalidate>
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="col-12">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control"
+               required>
+              </div>
+
+              <div class="col-12">
+                <label for="content" class="form-label">Content</label>
+                <textarea name="content" id="content" class="form-control" cols="30" rows="4"  ></textarea>
+              </div>
+
+              <div class="col-12">
+                <select class="form-select form-control" name="category" aria-label="Category">
+                  <option selected>Select Category</option>
+                  <% categories.forEach(category => { %>
+                    <option value="<%= category.name %>"><%= category.name %></option>
+                  <% }); %>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label for="image">Post Image</label>
+                <input type="file" class="form-control" name="image" accept="image/*">
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit Post</button>
+              </div>
+            </div>
+          </div>
+        </form>   
+         <!--End form-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if (isSubmitted) { %>
+<!-- Modal (initially hidden) -->
+<div class="modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="<%= isSubmitted ? 'false' : 'true' %>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <ul>
+          <li>
+           <h5 class="modal-title" id="imageModalLabel">Post has been added!</h5>
+          </li>
+          <li>
+           <h6 class="see-post"> See your<a href="<%= postURL %>" class= "see-post">post</a></h6>
+          </li> 
+      </ul>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="/img/earth-thanks.png" class="img-fluid" alt="Earth Thanks">
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+
+
+<script>
+ 
+ let isSubmitted = document.getElementById('isSubmitted').dataset.isSubmitted === 'true';
+ console.log('isSubmitted:', isSubmitted, typeof isSubmitted);
+
+  // Show the modal when isSubmitted is true
+  if (isSubmitted) {
+    console.log('isSubmitted is true!')
+    const imageModal = document.getElementById('imageModal');
+    const modal = new bootstrap.Modal(imageModal);
+    modal.show();
+  }
+
+</script>
+

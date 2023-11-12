@@ -1,0 +1,75 @@
+<!-- update-post.ejs -->
+
+<div class="update-container">
+  
+  <div class="px-4 py-3 my-5 text-center">
+    <h1 class="display-5 fw-bold write-post">Edit Your Post</h1>
+  </div>
+
+  <div class="row justify-content-center">
+    
+    <div class="row justify-content-center">      
+      <div class="col-md-8 col-12">
+
+        <% if (locals && locals.validationErrors && locals.validationErrors.length > 0) { %>
+          <div class="alert alert-danger update-error" role="alert">
+            <% locals.validationErrors.forEach(function (errorMessage) { %>
+              <p><%= errorMessage %></p>
+            <% }) %>
+          </div>
+        <% } %>
+                
+        
+        <% if (messages && messages.success && messages.success.length > 0) { %>
+          <div class="alert alert-success update-success" role="alert">
+            <% messages.success.forEach(function (successMessage) { %>
+              <p><%= successMessage %> <span class="see-updated">See 
+                <a href="/post/<%= existingPost._id %> %>"> post </a></span></p>
+            <% }) %>
+          </div>
+        <% } %>
+        
+        
+      </div>      
+      <div class="col-md-8 col-12">
+        
+        <!--Update POST form-->
+        <form action="/update-post/<%= existingPost._id %>" method="POST" enctype="multipart/form-data" novalidate>
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="col-12">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control" value="<%= existingPost.title %>" required>
+              </div>
+
+              <div class="col-12">
+                <label for="content" class="form-label">Content</label>
+                <textarea name="content" id="content" class="form-control" cols="30" rows="4"><%= existingPost.content %></textarea>
+              </div>
+
+              <div class="col-12">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select form-control" name="category" aria-label="Category">
+                  <% categories.forEach(category => { %>
+                    <option value="<%= category.name %>" <%= existingPost.category === category.name ? 'selected' : '' %>><%= category.name %></option>
+                  <% }); %>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label for="image">Post Image</label>
+                <input type="file" class="form-control" name="image" accept="image/*">
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Update Post</button>
+              </div>
+            </div>
+          </div>
+        </form>    
+        <!--End form-->
+
+      </div>
+    </div>
+  </div>
+</div>

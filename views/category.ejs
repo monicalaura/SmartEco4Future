@@ -1,0 +1,49 @@
+<!-- SINGLE CATEGORY page -->
+
+<div class="container text-center mt-5">
+  <!-- Category Name -->
+  <h1 class="my-3 cat-title"><%- category.name %></h1>
+
+  <!-- Category Image -->
+  <img src="/uploads/<%- category.image %>" class="img-fluid mb-3" alt="Category Image" loading="lazy">
+
+  <!-- Number of Blog Posts -->
+  <p class="mb-5 mt-4 fs-4">Number of Posts: <strong><%= categoryPosts.length %></strong></p>
+
+  <!-- Edit and Delete Buttons -->
+  <button class="btn btn-primary edit" type="button" 
+  onclick= "window.location.href='/update-category/<%= category._id %>'"><i class="bi bi-pencil"></i> Edit Category </button>
+  
+  <button class="btn btn-danger del-cat" type="button" data-catid="<%- category._id %>"><i class="bi bi-trash"></i> Delete Category</button>
+
+  <!-- Add New Category Button -->
+  <a href="/submit-category"><button class="btn btn-success add" type="button"><i class="bi bi-plus"></i> Add New Category</button></a>
+
+  <a href="/categories/"><button class="btn btn-success" type="button"><i class="bi bi-eye"></i> See all categories</button></a>
+
+   <!--Messages-->
+  <div class="alert alert-success del-cat-success" role="alert" style="visibility: hidden; transition: visibility 5s linear;"></div>
+  <div class="alert alert-danger del-cat-error" role="alert" style="visibility: hidden; transition: visibility 5s linear;"></div>     
+
+  <!-- All Blog Posts in this category -->
+  <section class="pb-4">
+    <h2 class="mb-5">All Posts in <span class="catTitle"><%- category.name %></span></h2>
+    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+      <% if (typeof categoryPosts !== 'undefined' && categoryPosts.length > 0) { %>
+        <% categoryPosts.forEach(function(post) { %>
+          <div class="col text-center category__link">
+            <a href="/post/<%= post._id %>">
+              <div class="category__img category__img--large shadow">
+                <img src="/uploads/<%= post.image %>" alt="<%= post.title %>" loading="lazy">
+              </div>
+              <div class="pt-1"><%= post.title %></div>
+            </a>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>No posts in this category.</p>
+      <% } %>
+    </div>
+  </section>
+  
+  

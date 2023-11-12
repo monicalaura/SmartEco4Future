@@ -1,0 +1,40 @@
+<!--SINGLE POST page-->
+
+<section class="single-post mx-auto">
+<div class="row">
+  <div class="col-12 col-md-4">
+    <img src="/uploads/<%- post.image %>" class="img-fluid" alt="<%- post.title %>" loading="lazy">
+  </div>
+
+  <div class="col-12 col-md-8">
+    <div class="row">
+      <div class="col-12"><h1 class="post-title"><%- post.title %></h1></div>
+      <div class="col-12 mb-2"><i class="bi bi-tag"></i> 
+        <span class="post-cat"><a href="/category/<%= postCatId %>">
+          <%= post.category %></a></span> 
+      <div class="col-12" style="white-space: pre-line;">
+        <p class="blog-text"><%- post.content %> </p>        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-4">
+      
+
+      <!--Control Buttons-->
+        <button class="btn btn-primary edit" type="button" 
+        onclick="window.location.href='/update-post/<%= post._id %>'"><i class="bi bi-pencil"></i> Update Post</button>
+
+        <button class="btn btn-danger del" type="button" data-postid="<%- post._id %>">
+          <i class="bi bi-trash"></i> Delete Post
+        </button>
+      
+        <!--Messages-->
+        <div class="alert alert-success" role="alert" style="visibility: hidden; transition: visibility 5s linear;"></div>
+        <div class="alert alert-danger" role="alert" style="visibility: hidden; transition: visibility 5s linear;"></div>     
+        
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+

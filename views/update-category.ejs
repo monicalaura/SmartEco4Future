@@ -1,0 +1,59 @@
+<!-- update-category -->
+
+<div class="update-container">
+  
+  <div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold write-post">Edit Category</h1>
+  </div>
+
+  <div class="row justify-content-center">
+    
+    <div class="row justify-content-center">      
+      <div class="col-8">
+
+        <% if (locals && locals.validationErrors && locals.validationErrors.length > 0) { %>
+          <div class="alert alert-danger update-error" role="alert">
+            <% locals.validationErrors.forEach(function (errorMessage) { %>
+              <p><%= errorMessage %></p>
+            <% }) %>
+          </div>
+        <% } %>
+                
+        
+        <% if (messages && messages.success && messages.success.length > 0 && !(locals && locals.validationErrors && locals.validationErrors.length > 0)) { %>
+          <div class="alert alert-success update-success" role="alert">
+            <% messages.success.forEach(function (successMessage) { %>
+              <p><%= successMessage %> <span class="see-updated">See the updated<a href="<%= updatedCatURL %>" >category</a></span></p>
+            <% }) %>
+          </div>
+        <% } %>
+        
+        
+      </div>      
+      <div class="col-8">
+        
+        <!--Update CATEGORY form-->
+        <form action="/update-category/<%= existingCat._id %>" method="POST"   enctype="multipart/form-data" novalidate>
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="col-12">
+                <label for="title" class="form-label">Name</label>
+                <input type="text" name="name" id="name" class="form-control" value="<%= existingCat.name %>" required>
+              </div>
+
+              <div class="col-12">
+                <label for="image">Category Image</label>
+                <input type="file" class="form-control" name="image" accept="image/*">
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Update Category</button>
+              </div>
+            </div>
+          </div>
+        </form>
+           <!--End form-->
+      </div>
+    </div>
+  </div>
+</div>

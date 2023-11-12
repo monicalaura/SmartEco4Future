@@ -1,0 +1,24 @@
+<!-- Blog posts start -->
+
+<section>
+  <h1 class="h1 mt-6 mb-3 text-center blog-posts">Our Blog Posts</h1>
+  <div class="text-center mb-5">
+    <a href="/submit-post" class="btn btn-primary btn-md">Add Post</a>
+  </div>
+<div class="row home-posts row-cols-lg-5 g-2 g-lg-3">
+  <% if (blogPosts != '') { %>
+    <% blogPosts.forEach(function (post, index) { %>
+      <a href="/post/<%= post._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= post.image %>" alt="<%= post.title %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= post.title %></div>
+      </a>
+    <% }) %>
+  <% } else { %>
+    <p>No items found.</p>
+  <% } %>
+</div>
+</section>
+
+<!-- Blog posts end -->
