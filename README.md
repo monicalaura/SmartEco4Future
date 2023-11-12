@@ -18,7 +18,6 @@ SmartEco4Future is a blog app template dedicated to exploring and showcasing cut
 *bash
 ### Clone the Repository
 git clone https://github.com/monicalaura/SmartEco4Future.git
-cd SmartEco4Future
 
 ### Install Dependencies
 npm install
