@@ -52,7 +52,7 @@ npm start
 - Click on the "Write" menu in the top navigation to add a new post.
 - Ideal size for a Post image: 1920px / 2880px (7:16 ratio).
 
-- **Search feature:** 
-    Use the search box to input a term, and the system will retrieve all posts that include that term within their title, content, or category.
+ ###  Search feature
+  Use the search box to input a term, and the system will retrieve all posts that include that term within their title, content, or category.
   
 
