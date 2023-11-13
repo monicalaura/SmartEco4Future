@@ -716,7 +716,7 @@ exports.deleteCategory = async (req, res) => {
 
 /**
  * POST /search
- * Search posts by title, content, categories (see models/Post for reference);
+ * (see models/Post for text indexes);
 */
 exports.searchPost = async(req, res) => {
 
