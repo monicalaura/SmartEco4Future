@@ -48,7 +48,7 @@ npm start
 ### Blog Post
 
 - Click on a blog post to view the post page.
-- Post page allows you to: Edit and Delete a post.
+- Control buttons: Edit and Delete.
 - Click on the "Write" menu in the top navigation to add a new post.
 - Ideal size for a Post image: 1920px / 2880px (7:16 ratio).
 
