@@ -364,6 +364,11 @@ color:var(--btn-green);
   font-weight: bold;
 }
 
+.searched-title {
+  font-size:1.2rem;  
+  color:var(--dark-green);
+}
+
 @media screen and (min-width: 1024px) {
   .post-title {
     text-align: left;

@@ -1,0 +1,16 @@
+<h1 class="pb-4">Search Results</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+  <% if(post != '') { %>
+    <% post.forEach(function(post, index){ %>
+    <a href="/post/<%= post._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img src="/uploads/<%= post.image %>" alt="<%= post.title %>" loading="lazy">
+      </div>
+      <div class="pt-1 searched-title"><%= post.title %></div>
+    </a>
+    <% }) %>
+  <% } else { %>
+    <p class="searched-title">No posts found.</p>
+  <% } %>
+</div>

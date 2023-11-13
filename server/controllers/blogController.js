@@ -79,7 +79,10 @@ exports.postForm = async (req, res) => {
 
  //submit-post
 exports.submitPost = async (req, res) => {
-  let isSubmitted = false; 
+  let isSubmitted = false;
+
+  // Fetch existing categories
+  const categories = await Category.find();
 
  try {
  
@@ -129,11 +132,9 @@ exports.submitPost = async (req, res) => {
 
    if (validationErrors.length > 0) {
     req.flash('validationErrors', validationErrors);
+    return res.redirect('/submit-post');
   }
   
-  
-   // Fetch existing categories
-   const categories = await Category.find();
 
    const newPost = new Post({
      title: req.body.title,
@@ -712,3 +713,27 @@ exports.deleteCategory = async (req, res) => {
     return res.status(500).json({ message: errorMessage });
   }
 };
+
+/**
+ * POST /search
+ * Search posts by title, content, categories (see models/Post for reference);
+*/
+exports.searchPost = async(req, res) => {
+
+  try {
+    let searchTerm = req.body.searchTerm;
+    console.log('Search Term:', searchTerm);
+    let post = await Post.find( { $text: { $search: searchTerm, $caseSensitive: false, $diacriticSensitive: true }});
+    console.log(post);
+
+    res.render('search', { 
+      title: 'SmartEco4Future - Search',
+      excludeHeader: true, 
+      post      
+     });
+
+  } catch (error) {
+    res.satus(500).send({message: error.message || "An error occured" });
+  }
+  
+}

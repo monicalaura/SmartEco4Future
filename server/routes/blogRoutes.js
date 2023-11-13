@@ -51,5 +51,8 @@ router.post('/update-category/:id', blogController.updateCategory);
 //DELETE category
 router.delete('/category/:id', blogController.deleteCategory);
 
+//POST search
+router.post('/search', blogController.searchPost);
+
 
 module.exports = router;
