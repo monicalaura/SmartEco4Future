@@ -13,23 +13,6 @@ SmartEco4Future is a blog app template dedicated to exploring and showcasing cut
 - **Tech Stack:** Node.js, Express, MongoDB
 - **Package Manager:** npm
 
-## How to Use
-
-*bash
-### Clone the Repository
-git clone https://github.com/monicalaura/SmartEco4Future.git
-
-
-### Install Dependencies
-npm install
-
-### Run the App
-npm start
-
-### MongoDB Configuration
-
-For proper functioning of this app, a temporary `.env` file is provided with access credentials to a MongoDB Cloud database. 
-
 ### Additional Information
 
 - **Start file:** app.js
@@ -57,6 +40,5 @@ For proper functioning of this app, a temporary `.env` file is provided with acc
 - Post page allows you to: Edit and Delete a post.
 - Click on the "Write" menu in the top navigation to add a new post.
 - Ideal size for a Post image: 1920px / 2880px (7:16 ratio).
-
 
 
