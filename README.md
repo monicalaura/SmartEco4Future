@@ -17,6 +17,10 @@ SmartEco4Future is a blog app template dedicated to exploring and showcasing cut
 
 - **Start file:** app.js
 - You can use nodemon to automatically restart the server on changes.
+- **Search feature:** 
+    Use the search box to input a term, and the system will retrieve all posts that include that term within their title, content, or category.
+
+
 
 - **Search feature:** Use the search box to input a term, and the system will retrieve all posts that include that term within their title, content, or category.
 
