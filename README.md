@@ -15,14 +15,14 @@ SmartEco4Future is a blog app template dedicated to exploring and showcasing cut
   ## How to Use
 
 *bash
-# Clone the Repository
+### Clone the Repository
 git clone https://github.com/monicalaura/SmartEco4Future.git
 
 
-# Install Dependencies
+### Install Dependencies
 npm install
 
-# Run the App
+### Run the App
 npm start
 
 
