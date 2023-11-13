@@ -6,17 +6,31 @@
 
 SmartEco4Future is a blog app template dedicated to exploring and showcasing cutting-edge ecological technologies, developed using Node.js, Express, and MongoDB with npm for package management.
 
-**Note:** The Search functionality is still to be implemented.
 
 ## Technical Information
 
 - **Tech Stack:** Node.js, Express, MongoDB
 - **Package Manager:** npm
 
+  ## How to Use
+
+*bash
+# Clone the Repository
+git clone https://github.com/monicalaura/SmartEco4Future.git
+
+
+# Install Dependencies
+npm install
+
+# Run the App
+npm start
+
+
 ### Additional Information
 
 - **Start file:** app.js
 - You can use nodemon to automatically restart the server on changes.
+  
 - **Search feature:** 
     Use the search box to input a term, and the system will retrieve all posts that include that term within their title, content, or category.
   
