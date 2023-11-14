@@ -334,10 +334,9 @@ exports.blogPage = async (req, res) => {
      });
 
   } catch (error) {
-    res.status(500).send({message: error.message || "An error occured" });
+    res.status(500).send({message: error.message || "An error occurred" });
   }
 
-  res.render('blog', { title: 'Blog Posts', excludeHeader: true});
 };
 
 
