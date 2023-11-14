@@ -45,7 +45,11 @@ npm start
 - Control buttons: Edit Category, Delete Category, and Add New Category.
 - Ideal size for a Category image: 640px / 426px (3:2 ratio).
 
-### Blog Post
+### Blog Posts
+
+- Click on the Blog nav link to see all the blog posts 
+
+### Single Post
 
 - Click on a blog post to view the post page.
 - Control buttons: Edit and Delete.
