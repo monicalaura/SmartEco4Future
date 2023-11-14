@@ -39,7 +39,7 @@ exports.homepage = async(req, res) => {
      } );
 
   } catch (error) {
-    res.status(500).send({message: error.message || "An error occured" });
+    res.status(500).send({message: error.message || "An error occurred" });
   }
 }
  
@@ -326,6 +326,7 @@ exports.blogPage = async (req, res) => {
   try {
     
   const blogPosts = await Post.find({}).sort({_id: -1});
+  console.log(blogPosts);
 
     res.render('blog', { 
       title: 'SmartEco4Future - Blog',
@@ -336,7 +337,6 @@ exports.blogPage = async (req, res) => {
   } catch (error) {
     res.status(500).send({message: error.message || "An error occurred" });
   }
-
 };
 
 
@@ -372,7 +372,7 @@ exports.singlePost = async(req, res) => {
      });
 
   } catch (error) {
-    res.status(500).send({message: error.message || "An error occured" });
+    res.status(500).send({message: error.message || "An error occurred" });
   }
 } 
 
@@ -414,7 +414,7 @@ exports.allCategories = async(req, res) => {
       excludeHeader: true
     });
   } catch (error) {
-    res.status(500).send({message: error.message || "An error occured" });
+    res.status(500).send({message: error.message || "An error occurred" });
   }
 } 
 
@@ -733,7 +733,7 @@ exports.searchPost = async(req, res) => {
      });
 
   } catch (error) {
-    res.satus(500).send({message: error.message || "An error occured" });
+    res.satus(500).send({message: error.message || "An error occurred" });
   }
   
 }
