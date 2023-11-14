@@ -121,6 +121,7 @@ exports.submitPost = async (req, res) => {
        }
 
    if (req.body.title) {
+
      // Check if a post with the same title already exists
      const existingPost = await Post.findOne({ title: req.body.title });  
 
@@ -329,7 +330,7 @@ exports.blogPage = async (req, res) => {
     res.render('blog', { 
       title: 'SmartEco4Future - Blog',
       excludeHeader: true, 
-      blogPosts,
+      blogPosts
      });
 
   } catch (error) {
@@ -372,7 +373,7 @@ exports.singlePost = async(req, res) => {
      });
 
   } catch (error) {
-    res.status(500).send({message: error.message || "An error Occured" });
+    res.status(500).send({message: error.message || "An error occured" });
   }
 } 
 
@@ -414,7 +415,7 @@ exports.allCategories = async(req, res) => {
       excludeHeader: true
     });
   } catch (error) {
-    res.status(500).send({message: error.message || "Error Occured" });
+    res.status(500).send({message: error.message || "An error occured" });
   }
 } 
 
@@ -653,15 +654,15 @@ exports.updateCategory= async (req, res) => {
     console.log('New Category Name:', name);
 
   
-    req.flash('success', 'Category updated successfully!');
+    req.flash('success', 'Category updated!');
 
     console.log(updatedCat);
     const updatedCatURL = `/category/${updatedCat._id}`;  
     console.log(updatedCatURL);
     
-    // Render the update-category view with success message
-    res.render('update-category', {
-      title: 'Update Successful',
+    
+    res.render('update category, {
+      title: 'Update Category',
       excludeHeader: true,
       updatedCat,
       existingCat: updatedCat,
