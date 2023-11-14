@@ -654,15 +654,15 @@ exports.updateCategory= async (req, res) => {
     console.log('New Category Name:', name);
 
   
-    req.flash('success', 'Category updated!');
+    req.flash('success', 'Category updated successfully!');
 
     console.log(updatedCat);
     const updatedCatURL = `/category/${updatedCat._id}`;  
     console.log(updatedCatURL);
     
-    
-    res.render('update category, {
-      title: 'Update Category',
+    // Render the update-category view with success message
+    res.render('update-category', {
+      title: 'Update Successful',
       excludeHeader: true,
       updatedCat,
       existingCat: updatedCat,
