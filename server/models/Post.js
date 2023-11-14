@@ -20,6 +20,7 @@ const postSchema = new mongoose.Schema({
   },
 });
 
+// text indexes for search 
 postSchema.index({ title: 'text', content: 'text', category: 'text' });
 
 
