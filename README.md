@@ -41,8 +41,7 @@ npm start
 
 ![eco1](https://github.com/monicalaura/SmartEco4Future/assets/58688612/f4e627d2-6099-42e1-ac49-87bd6ad01331) 
   
-![eco3](https://github.com/monicalaura/SmartEco4Future/assets/58688612/4ed4601e-bb53-4dcd-bccb-ccda8069f302)
-
+![eco2](https://github.com/monicalaura/SmartEco4Future/assets/58688612/0c71cf02-a2b3-401b-8666-5097df191a94)
 
 ### Categories
 
@@ -50,7 +49,8 @@ npm start
 - Control buttons: Edit Category, Delete Category, and Add New Category.
 - Ideal size for a Category image: 640px / 426px (3:2 ratio).
 
-  ![eco2](https://github.com/monicalaura/SmartEco4Future/assets/58688612/0c71cf02-a2b3-401b-8666-5097df191a94)
+![eco3](https://github.com/monicalaura/SmartEco4Future/assets/58688612/4ed4601e-bb53-4dcd-bccb-ccda8069f302)
+
 
 ### Blog Posts
 
